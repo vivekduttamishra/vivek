@@ -5,10 +5,13 @@
   <title>Redirecting...</title>
   <script>
     const path = window.location.pathname;
-    const targetPath = path.substring(path.lastIndexOf('/')); // Extract the route after the base
+    const basePath = '/vivek'; // Your repository name
 
-    // Redirect to the root with the path as state
-    window.location.replace('/vivek' + (targetPath === '/vivek' ? '/' : targetPath));
+    // Only redirect if the path is not the base path itself
+    if (path !== basePath + '/') {
+      sessionStorage.redirect = path;
+      window.location.replace(basePath + '/');
+    }
   </script>
 </head>
 <body>
