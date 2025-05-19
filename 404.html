@@ -1,33 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
-    <script>
-        // Single Page Apps for GitHub Pages
-        // MIT License
-        // https://github.com/rafrex/spa-github-pages
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    const path = window.location.pathname;
+    const targetPath = path.substring(path.lastIndexOf('/')); // Extract the route after the base
 
-        (function(l) {
-            if (l.search) {
-                var q = {};
-                l.search.slice(1).split('&').forEach(function (v) {
-                    var a = v.split('=');
-                    q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-                });
-                if (q.p !== undefined) {
-                    window.history.replaceState(null, null,
-                        l.pathname.slice(0, -1) + (q.p || '') +
-                        (q.q ? ('?' + q.q) : '') +
-                        l.hash
-                    );
-                }
-            }
-        }(window.location));
-    </script>
+    // Redirect to the root with the path as state
+    window.location.replace('/vivek' + (targetPath === '/vivek' ? '/' : targetPath));
+  </script>
 </head>
 <body>
-    <p>Page Not Found</p>
+  <h1>Redirecting...</h1>
 </body>
 </html>
